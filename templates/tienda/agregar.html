@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}Productos de control{% endblock title %}
+
+{% block categoria_producto %}
+{% endblock categoria_producto %}
+
+{% block contenido %}
+<div class="container d-flex">
+    <div class="Productos" style="height: 650px;">
+        <h2>Agregar productos de control</h2> 
+        <form  method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <div class="container d-flex">
+                    <div class="Productos" style="height: 650px;">
+                        <h2>Agregar productos de control</h2> 
+                        <form  method="post">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                <label for="producto-solicitar" class="form-label">Ingrese los siguientes datos:
+            registro ICA, nombre del producto, frecuencia de aplicación, valor del producto</label>
+
+                <textarea class="form-control" id="productos" rows="3" name="producto-Agregar"></textarea>
+            </div>
+
+            {% if user.is_authenticated %}
+            <div class="mb-3">
+                <h6>Ya estas registrado asi que no necesitamos tus datos de contacto.</h6>
+            </div>
+                <input class="btn btn-as " type="submit" name="agregar" value="agregar">
+            {% else %}
+                <div class="mb-3">
+                    <label for="nombre_noregistrado" class="form-label">Nombre de quien registra</label>
+                    <input type="text" class="form-control" id="nombre_noregistrado" placeholder="Pepito Perez" name="nombre_noregistrado" required>
+                </div>
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Email</label>
+                    <input type="correo" class="form-control" id="correo" placeholder="name@example.com" name="correo" required>
+                </div>
+                <input class="btn btn-as " type="submit" name="solicitar" value="Agregar">
+            {% endif %}  
+        </form>
+    </div>
+</div>
+
+
+{% endblock contenido %}
+

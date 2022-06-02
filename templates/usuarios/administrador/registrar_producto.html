@@ -1,0 +1,34 @@
+{% extends 'usuarios/administrador/panel_administrador.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/styleform.css' %}">
+{% endblock css %}
+
+{% block dashboard %}
+    <div class="Mensaje">
+        <h1>AÑADIR PRODUCTO</h1>
+    </div>
+        <div class="form">
+            <div class="tab-content">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.nombre }}
+                    {{ form.descripcion }}
+                    {{ form.precio }}
+                    <div>
+                        <label for="cantidad">Cantidad</label>
+                        {{ form.cantidad }}
+                    </div> 
+                    <div>
+                        <label for="categoria_id">Categoria</label>
+                        {{ form.categoria_id }}
+                    </div>     
+                    {{ form.imagen }}  
+                                    
+                    <button class="btn" type="submit">Añadir</button>
+                </form>
+            </div>
+        </div> 
+
+{% endblock dashboard %}

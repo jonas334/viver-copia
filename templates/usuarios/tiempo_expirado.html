@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Tiempo expirado{% endblock title %}
+
+{% block contenido %}
+    <div class="contenido-centrado container-xxl">
+        <div class="formulario-centrado d-flex flex-column justify-content-center align-items-center"> 
+            <h1>ERROR</h1>
+            <p>El tiempo para usar el enlace ha expirado. Por favor vuelva a solicitar las instrucciones
+            <a href="{% url 'usuarios:recuperar_contrasena' %}">Aqui</a></p>
+        </div>
+    </div>
+{% endblock contenido %}

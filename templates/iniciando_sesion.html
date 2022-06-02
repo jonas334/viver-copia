@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if request.user.is_root %}
+        <meta http-equiv="Refresh" content="0.1;url=http://127.0.0.1:8000/administracion/">
+    {% endif %}
+    {% if request.user.is_administrador %}
+        <meta http-equiv="Refresh" content="0.1;url=http://127.0.0.1:8000/administracion/">
+    {% endif %}
+    {% if request.user.is_tecnico_hardware %}
+        <meta http-equiv="Refresh" content="0.1;url=http://127.0.0.1:8000/administracion/">
+    {% endif %}
+    <meta http-equiv="Refresh" content="0.2;url=http://127.0.0.1:8000">
+    <title>Iniciando Sesion</title>
+</head>
+<body>
+</body>
+</html>

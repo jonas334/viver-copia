@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #dfe0e4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.navbar{
+    background: #1b1a31;
+    z-index: 10;
+    top: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.navbar-brand img {
+    width: 50px;
+    height: 50px;
+}
+
+.navbar-enlace {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-enlace:hover {
+    color: rgb(168, 168, 168);
+}
+
+.search-bar {
+    width: 500px;
+}
+.perfil{
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+}
+
+.perfil h4{
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.perfil a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 18px;
+    
+}
+
+.perfil .car {
+    margin-right: 5px;
+}
+
+.perfil a img {
+    width: 35px;
+    height: 25px;
+    padding: 0 5px;
+}
+
+.btn-as{
+    background: #493b8a;
+    color: #fff;
+}
+
+.btn-as:hover{
+    background: rgb(53, 37, 128);
+    color: #fff;
+}
+
+.btn-agregar {
+    width: 170px
+}
+
+.carousel {
+    top: 80px;
+}
+
+.carousel-inner {
+    padding: 0 20px;
+}
+
+.carousel-item img {
+    width: 70%;
+    height: 300px;    
+    margin: auto;
+}
+
+.container{
+    position: relative;
+    top: 90px;
+    justify-content:center;
+    padding: 10px;
+}
+
+.titulo-productos{
+    margin-left: 100px;
+}
+
+.container-productos {
+    justify-content: center;
+    
+}
+
+.card img {
+    height: 250px; 
+}
+
+.opciones-producto {
+    justify-content: space-between;
+}
+
+.container-producto{
+    position: relative;
+    justify-content:center;
+    padding: 10px;
+    height: 700px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+
+.img-producto {
+    width: 400px; 
+    height: 400px;
+    margin: 20px 60px ;
+}
+
+.detalles {
+    width: 400px; 
+    height: 400px;
+    margin: 20px 60px ;
+}
+
+.detalles h5{
+    margin: 20px 0;
+}
+
+footer {
+    background-color: #1b1a31;
+    color: #fff;
+    padding: 40px 24px;
+    position: relative;
+    top: 150px;
+}
+
+.productores {
+    height: 800px;
+    width: 700px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.productores h2{
+    margin-bottom: 30px;
+}
+
+.productores .opcionales {
+    margin: 0 0 10px 0;
+}
+
+.productores .precio-total {
+    margin: 25px auto;
+}
+
+.lista_productos{
+    width: 400px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px
+}
+
+
+.campos {
+    visibility: hidden;
+    top: -500px;
+    position: absolute;
+}
+
+.cant-productos{
+    position: absolute;
+    top: 10px;
+    margin-left: 17px;
+}

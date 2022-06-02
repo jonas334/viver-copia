@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}{{ producto.nombre }}{% endblock title %}
+
+{% block categoria_producto %}
+{% endblock categoria_producto %}
+
+{% block contenido %}
+<div class="container">
+    <div class="container-producto d-flex flex-wrap">
+    {% if not producto %}
+        <h5>El producto no Existe</h5>
+    {% else %}
+        <img src="{{ producto.imagen.url }}" class="img-producto" alt="{{ producto.imagen.url }}">
+        <div class="detalles">
+            <h5 class="">{{ producto.nombre }}</h5>
+            <h6>Categoria: {{ producto.categoria_id }}</h6>
+            <h5 class="">$ {{ producto.precio }}</h5>
+            
+            <div class="descripcion">
+                <h5>Descripcion </h5>
+                <p>{{ producto.descripcion }}</p>
+            </div>
+        </div>
+
+    {% endif %}
+    </div>
+</div>
+{% endblock contenido %}

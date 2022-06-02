@@ -1,0 +1,38 @@
+{% extends 'usuarios/root/panel_root.html' %}
+{% load static %}
+
+{% block dashboard %}
+    <div class="Mensaje">
+        <h1>ADMINISTRADORES</h1>
+    </div>
+    <div class="tabla">
+        <table>
+            <thead>
+                <tr>
+                    <th>C.C</th>
+                    <th>Email</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th style="text-align:center">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for administrador in administradores %}
+                <tr>
+                    <td>{{ administrador.cc }}</td>
+                    <td>{{ administrador.email }}</td>
+                    <td>{{ administrador.nombres }}</td>
+                    <td>{{ administrador.apellidos }}</td>
+                    <td class="opciones-tabla"><a href="{% url 'usuarios:eliminar_administrador' administrador.id %}" class="enlace enlace-delete"><i class='bx bx-x' ></i></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a href="{% url 'usuarios:registrar_admin' %}" class="boton">
+            <i class="icon ion-md-add-circle"></i>
+            <span class="link_name">Registrar Administrador</span>
+        </a>
+    </div>
+{% endblock dashboard %}

@@ -1,0 +1,32 @@
+{% extends 'usuarios/administrador/panel_administrador.html' %}
+{% load static %}
+
+{% block dashboard %}
+    <div class="Mensaje">
+        <h1>SOLICITUDES</h1>
+    </div>
+    <div class="tabla" style="width: 1000px;">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Solicitante</th>
+                    <th>Correo</th>
+                    <th>Fecha</th>
+                    <th>Producto Solcitado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for solicitud in solicitudes %}
+                <tr>
+                    <td>{{ solicitud.id }}</td>
+                    <td>{{ solicitud.solicitante }}</td>
+                    <td>{{ solicitud.correo }}</td>
+                    <td>{{ solicitud.fecha_solicitud }}</td>
+                    <td>{{ solicitud.producto }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock dashboard %}

@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}Recuperar Contraseña{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock css %}
+
+{% block contenido %}
+<div class="container-xxl contenido-centrado">
+    <div class="formulario-centrado d-flex flex-column justify-content-center align-items-center" > 
+        <h2>Recupera tu cuenta</h2>
+        <p>Ingresa tu correo electronico para buscar tu cuenta y enviar las instrucciones para recuperarla</p>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <input type="email" name="email"" class="form-control" id="exampleFormControlInput1" placeholder="email@example.com">
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</div>
+
+{% endblock contenido %}
+
+{% block footer %}
+    <footer style="top: 283px;">
+        <p>
+            © 2022 vivero. 
+        </p>
+    </footer>
+{% endblock footer %}

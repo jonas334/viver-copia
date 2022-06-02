@@ -1,0 +1,49 @@
+{% extends 'usuarios/registrar_admin.html' %}
+{% load static %}
+
+{% block card_title %} Registrarse {% endblock card_title %}
+
+{% block formulario %}
+<div class="container d-flex justify-content-center align-items-center ">
+    <div class="reg-admin centro d-flex  justify-content-center align-items-center ">
+      
+        <form method="POST" class="form-login">
+          {% csrf_token %}
+          <div class="logo">
+              <a href="{% url 'index' %}"><img src="{% static 'img/milogo.png' %}" class="logo img-thumbnail" alt="Logo vivero"></a>
+          </div>
+          <div class="mb-3">
+              <h4>Bienvenido</h4>
+          </div>
+          <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              {{ form.email }}
+          </div>
+          <div class="mb-3">
+            <label for="nombres" class="form-label">Nombres</label>
+            {{ form.nombres }}
+          </div>
+          <div class="mb-3">
+            <label for="apellidos" class="form-label">Apellidos</label>
+            {{ form.apellidos }}
+          </div>
+          <div class="mb-3">
+            <label for="password1" class="form-label">Constraseña</label>
+            {{ form.password1 }}
+          </div>
+          <div class="mb-3">
+              <label for="password2" class="form-label">Ingresa de nuevo tu Contraseña</label>
+              {{ form.password2 }}
+          </div>
+
+          <button type="submit" class="mb-3 btn">Registrarse</button>
+          <div class="mb-3">
+              <a href="{% url 'login' %}" class="m-3">Ya tienes cuenta? Inicia Sesión</a>
+              <a href="{% url 'usuarios:recuperar_contrasena' %}" class="m-3">¿olvidaste tu contraseña?</a>
+          </div>
+        </form>
+
+    </div>
+</div>
+
+{% endblock formulario %}

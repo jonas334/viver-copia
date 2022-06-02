@@ -1,0 +1,33 @@
+{% extends 'usuarios/panel_administracion.html' %}
+{% load static %}
+
+{% block rol %} Tecnico {% endblock rol %}
+
+{% block opciones %}
+
+    <li>
+        <a href="{% url 'usuarios:lista_pedidos_productores' %}">
+            <i class="icon ion-md-cog"></i>
+            <span class="link_name">Pedidos Pendientes</span>
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'usuarios:lista_pedidos_completados' %}">
+            <i class="icon ion-md-cog"></i>
+            <span class="link_name">Pedidos Completados</span>
+        </a>
+    </li>
+    
+{% endblock opciones %}
+
+{% block dashboard %}
+    <div class="Mensaje">
+        <h1>BIENVENIDO {{ user.nombres | upper }}</h1>
+    </div>
+    <div class="cantidad_usuarios">
+        <div class="card">
+            <a href="{% url 'usuarios:lista_pedidos_productores' %}"><img src="{% static 'img/producto.png' %}" alt="producto" class="img"></a>
+            <h4>Pedidos de productores: {{ pedidos }}</h4>
+        </div>
+    </div>
+{% endblock dashboard %}

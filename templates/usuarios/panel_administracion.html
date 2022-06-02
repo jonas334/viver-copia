@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block css %}
+    
+    {% endblock css %}
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    
+    <title>Administracion</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'img/milogo.png' %}" alt="Logo">
+            <span class="logo-name">vivero</span>
+            <a id="menu_toggle" class="menu-toggle">
+                <i class="bx bx-menu bx-md"></i>
+            </a>
+        </div>
+        <div class="panel-derecho">
+            <div class="perfil">
+                <h4>{{ user.nombres }}</h4>
+                <h5>{% block rol %}{% endblock rol %}</h5>
+            </div>
+            <a href="{% url 'logout' %}"><img src="{% static 'img/logout.png' %}" alt="logout"></a>
+        </div>
+    </header>
+
+    <div class="sidebar open" id="sidebar">
+        <ul class="nav-links">
+            <li>
+                <a href="{% url 'usuarios:administracion' %}">
+                    <i class="icon ion-md-grid"></i>
+                    <span class="link_name">Dashboard</span>
+                </a>
+            </li>
+            {% block opciones %}
+            
+            {% endblock opciones %}
+            
+        </ul>
+
+    </div>
+    <div class="container open" id="container">
+        
+        {% block dashboard %}
+        
+            
+        {% endblock dashboard %}
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

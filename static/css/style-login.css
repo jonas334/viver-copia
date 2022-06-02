@@ -1,0 +1,55 @@
+body {
+    background: #1b1a31;
+}
+
+.container {
+    height: 100vh;
+}
+
+.container .centro {
+    height: 450px;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.form-login img {
+    width: 100px;
+    height: 100px;
+    border: 0;
+    margin: 10px 0;
+    
+}
+
+.form-login {
+    width: 500px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-login input {
+    width: 300px;
+}
+.form-login div h4{
+    color: #5a5a5a;
+}
+
+.form-login button {
+    background-color: #3c3070;
+    color: #fff;
+}
+
+.form-login button:hover {
+    background-color: #2e235e;
+    color: #fff;
+}
+
+.form-login a{
+    text-decoration: none;
+}
+
+.container .reg-admin {
+    height: 800px;
+    width: 600px;
+}

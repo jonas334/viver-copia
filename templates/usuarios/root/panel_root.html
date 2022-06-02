@@ -1,0 +1,34 @@
+{% extends 'usuarios/panel_administracion.html' %}
+{% load static %}
+
+{% block rol %} Root {% endblock rol %}
+
+{% block opciones %}
+    <li>
+        <a id="usuarios">
+            <i class="icon ion-md-people"></i>
+            <span class="link_name">Usuarios</span>
+            <i class="icon ion-md-arrow-dropdown"></i>
+        </a>
+        <ul class="submenu close" id="submenu">
+            <li><a href="{% url 'usuarios:lista_administradores' %}">Administradores</a></li>
+            <li><a href="{% url 'usuarios:lista_tecnicos' %}">Tecnicos de Hardware</a></li>
+        </ul>
+    </li>
+{% endblock opciones %}
+
+{% block dashboard %}
+    <div class="Mensaje">
+        <h1>BIENVENIDO {{ user.nombres | upper }}</h1>
+    </div>
+    <div class="cantidad_usuarios">
+        <div class="card">
+            <a href="{% url 'usuarios:lista_administradores' %}"><img src="{% static 'img/admin.png' %}" alt="admin" class="img"></a>
+            <h4>Administradores: {{ administradores }}</h4>
+        </div>
+        <div class="card">
+            <a href="{% url 'usuarios:lista_tecnicos' %}"><img src="{% static 'img/tecnico.png' %}" alt="tecnico" class="img"></a>
+            <h4>Tecnicos de Hardware: {{ tecnicos }}</h4>
+        </div>
+    </div>
+{% endblock dashboard %}

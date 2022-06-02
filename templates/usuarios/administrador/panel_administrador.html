@@ -1,0 +1,38 @@
+{% extends 'usuarios/panel_administracion.html' %}
+{% load static %}
+
+{% block rol %} Administrador {% endblock rol %}
+
+{% block opciones %}
+    <li>
+        <a href="{% url 'usuarios:lista_productos' %}">
+            <i class="icon ion-md-cube"></i>
+            <span class="link_name">Productos</span>
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'usuarios:lista_pedidos' %}">
+            <i class="icon ion-md-cog"></i>
+            <span class="link_name">Pedidos de productores</span>
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'usuarios:lista_solicitudes' %}">
+            <i class="icon ion-md-document"></i>
+            <span class="link_name">Solicitudes</span>
+        </a>
+    </li>
+    
+{% endblock opciones %}
+
+{% block dashboard %}
+    <div class="Mensaje">
+        <h1>BIENVENIDO {{ user.nombres | upper }}</h1>
+    </div>
+    <div class="cantidad_usuarios">
+        <div class="card">
+            <a href="{% url 'usuarios:lista_productos' %}"><img src="{% static 'img/producto.png' %}" alt="producto" class="img"></a>
+            <h4>Productos: {{ productos }}</h4>
+        </div>
+    </div>
+{% endblock dashboard %}

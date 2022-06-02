@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}Recuperar Contraseña{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock css %}
+
+{% block contenido %}
+<div class="contenido-centrado container-xxl">
+    <div class="formulario-centrado d-flex flex-column justify-content-center align-items-center"> 
+        <h2>Cambiar Contraseña</h2>
+        <p>Ingresa una nueva contraseña para tu cuenta</p>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <input type="password" name="nueva_contrasena" class="form-control" id="exampleFormControlInput1" placeholder="Nueva Contrasena">
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</div>
+{% endblock contenido %}
+
+{% block footer %}
+    <footer style="top: 283px;">
+        <p>
+            © 2022 vivero. 
+        </p>
+    </footer>
+{% endblock footer %}

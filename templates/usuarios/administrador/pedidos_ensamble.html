@@ -1,0 +1,39 @@
+{% extends 'usuarios/administrador/panel_administrador.html' %}
+{% load static %}
+
+{% block dashboard %}
+    <div class="Mensaje">
+        <h1>PEDIDOS</h1>
+    </div>
+    <div class="tabla" style="width: 1200px; height: 600px;">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Comprador</th>
+                    <th>Precio</th>
+                    <th>Fecha</th>
+                    <th>Componentes</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pedido in pedidos %}
+                <tr>
+                    <td>{{ pedido.id }}</td>
+                    <td>{{ pedido.comprador }}</td>
+                    <td>{{ pedido.precio }}</td>
+                    <td>{{ pedido.fecha_pedido }}</td>
+                    <td>
+                        {% for componente in pedido.productos.all %}
+                            • {{ componente.nombre}} <br>
+                        {% endfor %}
+                    </td>
+                    <td>En proceso</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock dashboard %}
